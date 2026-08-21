@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View the photo gallery of Mirewood. Browse beautiful rustic weddings, receptions, and scenic pasture details in Springfield, Tennessee.">
+  <title>Gallery | Mirewood Event Venue</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo" aria-label="Mirewood Homepage">
+        <svg class="navbar__logo-img" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" stroke="#8C765C" stroke-width="2"/>
+          <path d="M30 70V30L50 50L70 30V70" stroke="#8C765C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="navbar__logo-text">Mirewood</span>
+      </a>
+
+      <button class="navbar__toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <ul class="navbar__menu" id="nav-menu">
+        <li><a href="index.html" class="navbar__link">Home</a></li>
+        <li><a href="index.html#about" class="navbar__link">About Us</a></li>
+        <li><a href="events-services.html" class="navbar__link">Events & Services</a></li>
+        <li><a href="gallery.html" class="navbar__link navbar__link--active">Gallery</a></li>
+        <li><a href="index.html#contact" class="navbar__link">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content Anchor -->
+  <main id="main-content" style="margin-top: 80px;">
+
+    <!-- Subpage Hero -->
+    <header class="hero subpage-hero" style="height: 40vh; min-height: 300px;">
+      <div class="hero__bg">
+        <img src="assets/495372096_1360663269396564_6284206079498753292_n.avif" alt="Bride and groom standing in a scenic meadow at Mirewood" class="hero__bg-img">
+        <div class="hero__bg-overlay"></div>
+      </div>
+      <div class="hero__content">
+        <span class="hero__subtitle">Visual Showcase</span>
+        <h1 class="hero__title" style="font-size: clamp(2.2rem, 4.5vw, 3.8rem);">Our Portfolio</h1>
+      </div>
+    </header>
+
+    <!-- Introductory Copy -->
+    <section class="section reveal">
+      <div class="section__container subpage-intro">
+        <span class="section__subtitle">A Glimpse of Mirewood</span>
+        <h2 class="section__title" style="margin-bottom: 2rem;">Real Weddings & Events</h2>
+        <p>
+          Take a look around. Browse photos of couples celebrating their special moments at our venue. From outdoor pasture ceremonies under TN golden hours to indoor reception halls glowing with bistro lights, Mirewood offers endless stunning photo backdrops.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="section reveal" style="padding-top: 0;">
+      <div class="section__container">
+        <div class="gallery-grid" role="region" aria-label="Photo Grid">
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of couple walking in the woods in lightbox">
+            <img src="assets/494710934_1360663036063254_108134056104979206_n.avif" alt="Bride and groom at the forest clearing">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of couple under sunset in lightbox">
+            <img src="assets/495181087_1360663536063204_5677267497084174376_n.avif" alt="Bride and groom walking at golden hour sunset">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of couple in grass pasture in lightbox">
+            <img src="assets/495372096_1360663269396564_6284206079498753292_n.avif" alt="Newlyweds standing in front of outdoor ceremony background">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of couple sparkler kiss in lightbox">
+            <img src="assets/hero_sunset.jpg" alt="Bride and groom share a dip kiss surrounded by sparklers at sunset">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of reception barn interior in lightbox">
+            <img src="assets/reception_hall.jpg" alt="Beautiful indoor reception setup showing wooden beams and table decorations">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal Container -->
+    <div class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image Lightbox Viewer">
+      <div class="lightbox-modal__content">
+        <button class="lightbox-modal__close" aria-label="Close Lightbox Viewer">&times;</button>
+        <img class="lightbox-modal__img" src="" alt="Lightbox Zoomed View">
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <svg class="footer__logo-img" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" stroke="#8C765C" stroke-width="2"/>
+        <path d="M30 70V30L50 50L70 30V70" stroke="#8C765C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="footer__logo-text">Mirewood</div>
+      
+      <ul class="footer__nav" aria-label="Footer Navigation">
+        <li><a href="index.html" class="footer__nav-link">Home</a></li>
+        <li><a href="index.html#about" class="footer__nav-link">About Us</a></li>
+        <li><a href="events-services.html" class="footer__nav-link">Events & Services</a></li>
+        <li><a href="gallery.html" class="footer__nav-link">Gallery</a></li>
+        <li><a href="index.html#contact" class="footer__nav-link">Contact</a></li>
+      </ul>
+
+      <div class="footer__copyright">
+        <span>2026 © Mirewood Events. Operating Hours: By Appointment Only.</span>
+        <span class="footer__credit">Website by <a href="#" target="_blank" rel="noopener">Antigravity</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mirewood is an elegant, modern-rustic wedding and event venue nestled in Springfield, Middle Tennessee. Host weddings, social gatherings, and corporate events on our beautiful 40-acre property.">
+  <title>Mirewood Event Venue | Springfield, Tennessee</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo" aria-label="Mirewood Homepage">
+        <!-- SVG Logo for high-fidelity brand presentation -->
+        <svg class="navbar__logo-img" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" stroke="#8C765C" stroke-width="2"/>
+          <path d="M30 70V30L50 50L70 30V70" stroke="#8C765C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="navbar__logo-text">Mirewood</span>
+      </a>
+
+      <button class="navbar__toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <ul class="navbar__menu" id="nav-menu">
+        <li><a href="index.html" class="navbar__link navbar__link--active">Home</a></li>
+        <li><a href="#about" class="navbar__link">About Us</a></li>
+        <li><a href="events-services.html" class="navbar__link">Events & Services</a></li>
+        <li><a href="gallery.html" class="navbar__link">Gallery</a></li>
+        <li><a href="#contact" class="navbar__link">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content Anchor -->
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero__bg">
+        <img src="assets/hero_sunset.jpg" alt="Newlyweds dip kissing at sunset at Mirewood" class="hero__bg-img">
+        <div class="hero__bg-overlay"></div>
+      </div>
+      <div class="hero__content">
+        <span class="hero__subtitle">Middle Tennessee Premier Venue</span>
+        <h1 class="hero__title">Celebrate your moment at <span>Mirewood</span></h1>
+        <p class="hero__text">A stunning blend of modern elegance and country charm. The perfect setting for your unforgettable moments.</p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary">Book a Tour</a>
+          <a href="events-services.html" class="btn btn--secondary">Our Services</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Why Choose Mirewood Section -->
+    <section class="section reveal">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__subtitle">Welcome to Mirewood</span>
+          <h2 class="section__title">Why Choose Mirewood?</h2>
+          <div class="section__divider"></div>
+        </div>
+        <div class="intro__grid">
+          <div class="intro__content">
+            <p class="intro__text">
+              "This beautiful Middle Tennessee event venue is the perfect blend of modern and country, in a serene setting for those who enjoy the beauty of nature, while also taking in breathtaking gorgeous architecture with a historic touch."
+            </p>
+          </div>
+          <!-- 3-Column Image Showcase -->
+          <div class="intro__gallery">
+            <div class="gallery-card">
+              <img src="assets/494710934_1360663036063254_108134056104979206_n.avif" alt="Bride and groom at the forest clearing" class="gallery-card__img">
+              <div class="gallery-card__overlay">
+                <span class="gallery-card__title">Rustic Forest Trails</span>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img src="assets/495181087_1360663536063204_5677267497084174376_n.avif" alt="Bride and groom walking at golden hour sunset" class="gallery-card__img">
+              <div class="gallery-card__overlay">
+                <span class="gallery-card__title">Scenic Pastures</span>
+              </div>
+            </div>
+            <div class="gallery-card">
+              <img src="assets/495372096_1360663269396564_6284206079498753292_n.avif" alt="Newlyweds standing in front of outdoor ceremony background" class="gallery-card__img">
+              <div class="gallery-card__overlay">
+                <span class="gallery-card__title">Open Meadow Fields</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview Split Layout -->
+    <section class="section section--dark reveal">
+      <div class="section__container">
+        <div class="services__split">
+          <div class="services__img-container">
+            <img src="assets/reception_hall.jpg" alt="Luxury rustic reception hall layout" class="services__img">
+          </div>
+          <div class="services__content">
+            <span class="section__subtitle" style="color: var(--color-primary-light);">Explore Opportunities</span>
+            <h2 class="section__title">Your Backdrop for Events Large & Small</h2>
+            <p style="margin-bottom: 2rem; color: rgba(255, 255, 255, 0.7);">
+              At Mirewood, we offer various services to meet your event needs. We are more than just a wedding venue in Tennessee, and want you and your guests to feel welcomed.
+            </p>
+            <ul class="services__list" aria-label="List of events we host">
+              <li class="services__item">
+                <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                Weddings
+              </li>
+              <li class="services__item">
+                <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                Birthdays
+              </li>
+              <li class="services__item">
+                <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                Reunions
+              </li>
+              <li class="services__item">
+                <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                Baby Showers
+              </li>
+              <li class="services__item">
+                <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                Corporate Events
+              </li>
+              <li class="services__item">
+                <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                Quinceañeras
+              </li>
+            </ul>
+            <div style="margin-top: 2.5rem;">
+              <a href="events-services.html" class="btn btn--primary">View All Packages</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="section reveal" id="about">
+      <div class="section__container">
+        <div class="about__grid">
+          <div class="about__content-block">
+            <span class="section__subtitle">Our Story</span>
+            <h2 class="section__title" style="text-align: left; margin-bottom: 2rem;">Built With Love</h2>
+            <p class="about__p">
+              The Mirewood event venue is special because it was built with the love of our owners, Eric and Traci Pulley. In fact, Eric and Traci were the very first to renew their vows at the property and ensure it was filled with love for all others who use it. Now, The Mirewood is an event venue based in Robertson County, Tennessee, open to all types of beautiful celebrations, large and small.
+            </p>
+            <p class="about__p">
+              When the Pulley's bought 3 acres in Robertson County early in their marriage, they knew they wanted to celebrate love on this land. After purchasing additional land behind that original plot, they have since built the Mirewood. A painstaking labor of love, the Mirewood is now available for celebrations of all kinds: weddings, birthdays, baby showers, corporate events, and more!
+            </p>
+            <ul class="about__bullets" aria-label="Key facts about Mirewood">
+              <li class="about__bullet-item">
+                <svg width="18" height="18" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Fully heated & cooled space
+              </li>
+              <li class="about__bullet-item">
+                <svg width="18" height="18" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Full commercial prep kitchen
+              </li>
+              <li class="about__bullet-item">
+                <svg width="18" height="18" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Separate Bridal & Groom Suites
+              </li>
+              <li class="about__bullet-item">
+                <svg width="18" height="18" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Holds 125-175 individuals
+              </li>
+            </ul>
+          </div>
+          <div class="about__side-info" style="background-color: var(--color-white); padding: 3rem; border-radius: var(--border-radius); box-shadow: var(--shadow-soft); border-left: 4px solid var(--color-primary);">
+            <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--color-primary-dark); margin-bottom: 1.5rem;">Quick Overview</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">Our location offers beautiful woodsy trails, sunset meadows, and a spacious reception hall built with natural logs.</p>
+            <div style="border-top: 1px solid rgba(140, 118, 92, 0.15); padding-top: 1.5rem;">
+              <p style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent); margin-bottom: 0.5rem;">Capacity</p>
+              <p style="font-size: 1.1rem; color: var(--color-text-dark); font-weight: 500;">Up to 175 Guests</p>
+            </div>
+            <div style="margin-top: 1.5rem;">
+              <p style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent); margin-bottom: 0.5rem;">Alcohol Policy</p>
+              <p style="font-size: 1rem; color: var(--color-text-dark); font-weight: 500;">Bring Your Own Alcohol Allowed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue Features Section -->
+    <section class="section section--dark reveal">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__subtitle" style="color: var(--color-primary-light);">Convenience & Comfort</span>
+          <h2 class="section__title">Venue Features</h2>
+          <div class="section__divider"></div>
+        </div>
+        <div class="features__grid">
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Fully Heated & Cooled</h3>
+            <p class="feature-card__desc">The venue is unique in that it is fully heated and cooled, making it comfortable on the hottest of summer days and the coldest winter nights.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Full Preparation Kitchen</h3>
+            <p class="feature-card__desc">Equipped with a commercial kitchen setup, bathrooms, and prep counters to make serving catering a breeze for any external caterer of your choice.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Private Dressing Suites</h3>
+            <p class="feature-card__desc">Separate, beautifully decorated changing rooms for the bride, groom, and wedding parties to prepare in comfort before the event begins.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Outside Vendors Welcome</h3>
+            <p class="feature-card__desc">We offer you total flexibility. Outside vendors are welcome, and we can also provide a list of local vendors we enjoy working with.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section class="section reveal">
+      <div class="section__container">
+        <div class="section__header">
+          <span class="section__subtitle">Our Family</span>
+          <h2 class="section__title">Meet the Team</h2>
+          <div class="section__divider"></div>
+        </div>
+        <div class="team__grid">
+          <div class="team-card">
+            <div class="team-card__img-wrapper">
+              <img src="assets/image2.avif" alt="Traci Pulley, Owner of Mirewood" class="team-card__img">
+            </div>
+            <div class="team-card__info">
+              <h3 class="team-card__name">Traci Pulley</h3>
+              <span class="team-card__role">Owner</span>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-card__img-wrapper">
+              <img src="assets/image0.avif" alt="Eric Pulley, Owner of Mirewood" class="team-card__img">
+            </div>
+            <div class="team-card__info">
+              <h3 class="team-card__name">Eric Pulley</h3>
+              <span class="team-card__role">Owner</span>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-card__img-wrapper">
+              <img src="assets/image5.avif" alt="Erica Brown, Consultant at Mirewood" class="team-card__img">
+            </div>
+            <div class="team-card__info">
+              <h3 class="team-card__name">Erica Brown</h3>
+              <span class="team-card__role">Consultant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mid-page CTA Banner -->
+    <section class="cta-banner" aria-label="Visual Portfolio Banner">
+      <h2 class="cta-banner__title">Be part of the experience</h2>
+      <p class="cta-banner__text">Browse our collection of beautiful ceremonies and receptions hosted at Mirewood.</p>
+      <a href="gallery.html" class="btn btn--primary">View Our Portfolio</a>
+    </section>
+
+    <!-- Contact Form Section ("Let's Chat") -->
+    <section class="section section--dark reveal" id="contact">
+      <div class="section__container">
+        <div class="chat__layout">
+          <div class="chat__info">
+            <span class="section__subtitle" style="color: var(--color-primary-light);">Get In Touch</span>
+            <h2 class="chat__info-title">Let's Chat</h2>
+            <p class="chat__info-text">
+              We look forward to hosting your beautiful celebration. Contact us to schedule an appointment or check availability.
+            </p>
+            <ul class="chat__details" aria-label="Contact details">
+              <li class="chat__detail-item">
+                <div class="chat__detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                </div>
+                <div>
+                  <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5);">Phone</p>
+                  <a href="tel:6155192951">615-519-2951</a>
+                </div>
+              </li>
+              <li class="chat__detail-item">
+                <div class="chat__detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </div>
+                <div>
+                  <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5);">Email</p>
+                  <a href="mailto:Tracihp12@icloud.com">Tracihp12@icloud.com</a>
+                </div>
+              </li>
+              <li class="chat__detail-item">
+                <div class="chat__detail-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <div>
+                  <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5);">Location</p>
+                  <span style="color: var(--color-white); font-weight: 300;">5329 Youngville Road, Springfield, TN 37172</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="chat__form-container">
+            <form class="chat__form" action="#" method="POST" aria-label="Event Inquiry Form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name" class="form-label">First Name *</label>
+                  <input type="text" id="first-name" class="form-input" required placeholder="John">
+                </div>
+                <div class="form-group">
+                  <label for="last-name" class="form-label">Last Name *</label>
+                  <input type="text" id="last-name" class="form-input" required placeholder="Doe">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email" class="form-label">Email *</label>
+                  <input type="email" id="email" class="form-input" required placeholder="john.doe@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="form-label">Phone *</label>
+                  <input type="tel" id="phone" class="form-input" required placeholder="615-555-0199">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="event-date" class="form-label">Date of Event *</label>
+                <input type="date" id="event-date" class="form-input" required>
+              </div>
+              <div class="form-group form-group--full">
+                <label for="details" class="form-label">Tell Us About Your Upcoming Event</label>
+                <textarea id="details" class="form-input" placeholder="Type event details here (guests count, type of celebration, etc.)..."></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary" style="width: 100%; border: none;">Submit Inquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <svg class="footer__logo-img" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" stroke="#8C765C" stroke-width="2"/>
+        <path d="M30 70V30L50 50L70 30V70" stroke="#8C765C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="footer__logo-text">Mirewood</div>
+      
+      <ul class="footer__nav" aria-label="Footer Navigation">
+        <li><a href="index.html" class="footer__nav-link">Home</a></li>
+        <li><a href="index.html#about" class="footer__nav-link">About Us</a></li>
+        <li><a href="events-services.html" class="footer__nav-link">Events & Services</a></li>
+        <li><a href="gallery.html" class="footer__nav-link">Gallery</a></li>
+        <li><a href="index.html#contact" class="footer__nav-link">Contact</a></li>
+      </ul>
+
+      <div class="footer__copyright">
+        <span>2026 © Mirewood Events. Operating Hours: By Appointment Only.</span>
+        <span class="footer__credit">Website by <a href="#" target="_blank" rel="noopener">Antigravity</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
