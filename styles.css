@@ -173,6 +173,12 @@ p {
   padding: 1rem 2rem;
 }
 
+/* Pushes subpage content below the fixed navbar; kept in sync with the
+   navbar's actual height at each breakpoint (see mobile override below) */
+.main--offset {
+  margin-top: 80px;
+}
+
 .navbar__logo {
   display: flex;
   align-items: center;
@@ -180,17 +186,8 @@ p {
 }
 
 .navbar__logo-img {
-  height: 48px;
-  margin-right: 0.75rem;
-}
-
-.navbar__logo-text {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  letter-spacing: 0.15em;
-  color: var(--color-text-dark);
-  text-transform: uppercase;
-  font-weight: 400;
+  height: 52px;
+  width: auto;
 }
 
 .navbar__menu {
@@ -889,15 +886,8 @@ textarea.form-input {
 }
 
 .footer__logo-img {
-  height: 56px;
-  margin-bottom: 1rem;
-}
-
-.footer__logo-text {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  height: 96px;
+  width: auto;
   margin-bottom: 2rem;
 }
 
@@ -1185,12 +1175,25 @@ textarea.form-input {
 }
 
 @media (max-width: 768px) {
+  /* Smaller header on mobile — it was eating too much of the screen */
+  .navbar__container {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .navbar__logo-img {
+    height: 40px;
+  }
+
+  .main--offset {
+    margin-top: 64px;
+  }
+
   .navbar__menu {
     position: fixed;
-    top: 80px;
+    top: 64px;
     left: -100%;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 64px);
     background-color: var(--color-white);
     flex-direction: column;
     gap: 2rem;
