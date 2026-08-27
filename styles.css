@@ -461,7 +461,7 @@ p {
 /* Why Choose Mirewood (Intro Section) */
 .intro__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 4rem;
   align-items: center;
 }
@@ -964,7 +964,7 @@ textarea.form-input {
 
 .services-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 5rem;
   margin-top: 4rem;
 }
@@ -1128,13 +1128,13 @@ textarea.form-input {
   }
 
   .intro__gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     max-width: 450px;
     margin: 0 auto;
   }
 
   .services__split {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .services__content {
@@ -1142,22 +1142,22 @@ textarea.form-input {
   }
 
   .about__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
 
   .features__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .team__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     max-width: 400px;
     margin: 0 auto;
   }
 
   .chat__layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
 
@@ -1166,7 +1166,7 @@ textarea.form-input {
   }
 
   .service-row, .service-row:nth-child(even) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
   }
   
@@ -1220,7 +1220,7 @@ textarea.form-input {
   }
 
   .form-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.75rem;
   }
 
@@ -1228,14 +1228,43 @@ textarea.form-input {
     padding: 1.5rem;
   }
 
+  /* Clear the fixed mobile call/book bar so hero CTAs aren't hidden behind it */
+  .hero--editorial {
+    padding-bottom: calc(58px + 7vh);
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
   .btn {
     width: 100%;
     margin-left: 0 !important;
     margin-bottom: 1rem;
   }
-  
+
+  /* Hero CTAs stay side by side on mobile instead of stacking */
+  .hero__actions {
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .hero__actions .btn {
+    width: auto;
+    flex: 1;
+    margin-bottom: 0;
+    padding: 1rem 0.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+
   .gallery-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer__nav {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    column-gap: 1.5rem;
   }
 
   .footer__copyright {
@@ -1309,7 +1338,10 @@ textarea.form-input {
 
   .mobile-cta-bar__btn {
     flex: 1;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     padding: 1rem;
     font-family: var(--font-sans);
     font-weight: 600;
@@ -1318,6 +1350,10 @@ textarea.form-input {
     text-transform: uppercase;
     text-decoration: none;
     transition: var(--transition-smooth);
+  }
+
+  .mobile-cta-bar__btn svg {
+    flex-shrink: 0;
   }
 
   .mobile-cta-bar__btn--call {
