@@ -115,24 +115,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Accessibility Skip Link */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--color-primary);
-  color: var(--color-white);
-  padding: 8px 16px;
-  z-index: 1000;
-  transition: top 0.2s;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.skip-link:focus {
-  top: 0;
-}
-
 /* Typography styles */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
@@ -336,12 +318,20 @@ p {
   text-align: left;
 }
 
+/* The editorial hero has no glass backdrop behind its text, so give the
+   title and body copy the same shadow insurance the eyebrow line has */
+.hero--editorial .hero__title,
+.hero--editorial .hero__text {
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+}
+
 .hero__subtitle {
   font-family: var(--font-sans);
   text-transform: uppercase;
   letter-spacing: 0.3em;
   font-size: 0.85rem;
-  color: var(--color-primary-light);
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
   margin-bottom: 1.5rem;
   display: block;
 }

@@ -8,10 +8,24 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const currentSeason = document.documentElement.getAttribute('data-season') || 'fall';
+  // The winter photo is a tall portrait shot with the couple low in the frame;
+  // on a wide hero the default center crop cuts them out entirely, so bias down.
+  const winterObjectPosition = 'center 85%';
+
   document.querySelectorAll('[data-seasonal-hero]').forEach((img) => {
     img.src = seasonHeroImages[currentSeason].src;
     img.alt = seasonHeroImages[currentSeason].alt;
+    img.style.objectPosition = currentSeason === 'winter' ? winterObjectPosition : '';
   });
+
+  // The homepage hero normally shows a fixed venue photo (not the season rotation
+  // above), but in winter it swaps to the snow photo since the venue looks so different
+  const homeHero = document.querySelector('.hero--editorial .hero__bg-img');
+  if (homeHero && currentSeason === 'winter') {
+    homeHero.src = seasonHeroImages.winter.src;
+    homeHero.alt = seasonHeroImages.winter.alt;
+    homeHero.style.objectPosition = winterObjectPosition;
+  }
 
   // 1. Mobile Menu Toggle
   const toggleBtn = document.querySelector('.navbar__toggle');

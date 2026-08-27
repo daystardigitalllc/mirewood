@@ -6,4 +6,4 @@
 //
 // This is the only place the season is controlled — there is no visitor-facing
 // switcher. Edit this value and redeploy to change the site's look.
-window.MIREWOOD_SEASON = 'fall';
+window.MIREWOOD_SEASON = 'winter';
