@@ -6,6 +6,21 @@
   <meta name="description" content="Mirewood is an elegant, modern-rustic wedding and event venue nestled in Springfield, Middle Tennessee. Host weddings, social gatherings, and corporate events on our beautiful 40-acre property.">
   <title>Mirewood Event Venue | Springfield, Tennessee</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Season is set in season-config.js (edit that file to change it for all visitors) -->
+  <script src="season-config.js"></script>
+  <script>
+    (function () {
+      var season = window.MIREWOOD_SEASON;
+      if (!season) {
+        var month = new Date().getMonth() + 1;
+        season = (month >= 3 && month <= 5) ? 'spring'
+          : (month >= 6 && month <= 8) ? 'summer'
+          : (month >= 9 && month <= 11) ? 'fall'
+          : 'winter';
+      }
+      document.documentElement.setAttribute('data-season', season);
+    })();
+  </script>
 </head>
 <body>
 
@@ -15,7 +30,7 @@
   <!-- Header & Navigation -->
   <nav class="navbar" aria-label="Main Navigation">
     <div class="navbar__container">
-      <a href="index.html" class="navbar__logo" aria-label="Mirewood Homepage">
+      <a href="/" class="navbar__logo" aria-label="Mirewood Homepage">
         <!-- SVG Logo for high-fidelity brand presentation -->
         <svg class="navbar__logo-img" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="50" cy="50" r="45" stroke="#8C765C" stroke-width="2"/>
@@ -31,11 +46,12 @@
       </button>
 
       <ul class="navbar__menu" id="nav-menu">
-        <li><a href="index.html" class="navbar__link navbar__link--active">Home</a></li>
+        <li><a href="/" class="navbar__link navbar__link--active">Home</a></li>
         <li><a href="#about" class="navbar__link">About Us</a></li>
-        <li><a href="events-services.html" class="navbar__link">Events & Services</a></li>
-        <li><a href="gallery.html" class="navbar__link">Gallery</a></li>
+        <li><a href="/events-services" class="navbar__link">Events & Services</a></li>
+        <li><a href="/gallery" class="navbar__link">Gallery</a></li>
         <li><a href="#contact" class="navbar__link">Contact Us</a></li>
+        <li><a href="#contact" class="navbar__cta">Book a Tour</a></li>
       </ul>
     </div>
   </nav>
@@ -44,18 +60,22 @@
   <main id="main-content">
 
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero hero--editorial">
       <div class="hero__bg">
-        <img src="assets/hero_sunset.jpg" alt="Newlyweds dip kissing at sunset at Mirewood" class="hero__bg-img">
+        <img src="assets/mirewood_venue.jpg" alt="Mirewood venue entrance gate and barn at golden hour" class="hero__bg-img">
         <div class="hero__bg-overlay"></div>
       </div>
       <div class="hero__content">
         <span class="hero__subtitle">Middle Tennessee Premier Venue</span>
         <h1 class="hero__title">Celebrate your moment at <span>Mirewood</span></h1>
         <p class="hero__text">A stunning blend of modern elegance and country charm. The perfect setting for your unforgettable moments.</p>
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-mark"></span>
+          2025 Finalist, Best Wedding &amp; Event Venue — Robertson County
+        </div>
         <div class="hero__actions">
           <a href="#contact" class="btn btn--primary">Book a Tour</a>
-          <a href="events-services.html" class="btn btn--secondary">Our Services</a>
+          <a href="tel:6155192951" class="btn btn--secondary">Call 615-519-2951</a>
         </div>
       </div>
     </header>
@@ -113,33 +133,15 @@
               At Mirewood, we offer various services to meet your event needs. We are more than just a wedding venue in Tennessee, and want you and your guests to feel welcomed.
             </p>
             <ul class="services__list" aria-label="List of events we host">
-              <li class="services__item">
-                <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                Weddings
-              </li>
-              <li class="services__item">
-                <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                Birthdays
-              </li>
-              <li class="services__item">
-                <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                Reunions
-              </li>
-              <li class="services__item">
-                <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                Baby Showers
-              </li>
-              <li class="services__item">
-                <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                Corporate Events
-              </li>
-              <li class="services__item">
-                <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                Quinceañeras
-              </li>
+              <li class="services__item">Weddings</li>
+              <li class="services__item">Birthdays</li>
+              <li class="services__item">Reunions</li>
+              <li class="services__item">Baby Showers</li>
+              <li class="services__item">Corporate Events</li>
+              <li class="services__item">Quinceañeras</li>
             </ul>
             <div style="margin-top: 2.5rem;">
-              <a href="events-services.html" class="btn btn--primary">View All Packages</a>
+              <a href="/events-services" class="btn btn--primary">View All Packages</a>
             </div>
           </div>
         </div>
@@ -205,28 +207,48 @@
         <div class="features__grid">
           <div class="feature-card">
             <div class="feature-card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="10" y="3" width="4" height="10" rx="2"/>
+                <circle cx="12" cy="17" r="4"/>
+                <line x1="10" y1="6.5" x2="8.7" y2="6.5"/>
+                <line x1="10" y1="9.5" x2="8.7" y2="9.5"/>
+              </svg>
             </div>
             <h3 class="feature-card__title">Fully Heated & Cooled</h3>
             <p class="feature-card__desc">The venue is unique in that it is fully heated and cooled, making it comfortable on the hottest of summer days and the coldest winter nights.</p>
           </div>
           <div class="feature-card">
             <div class="feature-card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 10h14"/>
+                <path d="M6 10v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6"/>
+                <path d="M3 10h2"/>
+                <path d="M19 10h2"/>
+                <line x1="12" y1="4" x2="12" y2="7"/>
+              </svg>
             </div>
             <h3 class="feature-card__title">Full Preparation Kitchen</h3>
             <p class="feature-card__desc">Equipped with a commercial kitchen setup, bathrooms, and prep counters to make serving catering a breeze for any external caterer of your choice.</p>
           </div>
           <div class="feature-card">
             <div class="feature-card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v2"/>
+                <path d="M4 17l7.3-5.2a1.1 1.1 0 0 1 1.4 0L20 17"/>
+                <line x1="3" y1="19" x2="21" y2="19"/>
+              </svg>
             </div>
             <h3 class="feature-card__title">Private Dressing Suites</h3>
             <p class="feature-card__desc">Separate, beautifully decorated changing rooms for the bride, groom, and wedding parties to prepare in comfort before the event begins.</p>
           </div>
           <div class="feature-card">
             <div class="feature-card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 12h7"/>
+                <path d="M8 8l-4 4 4 4"/>
+                <path d="M20 12h-7"/>
+                <path d="M16 8l4 4-4 4"/>
+              </svg>
             </div>
             <h3 class="feature-card__title">Outside Vendors Welcome</h3>
             <p class="feature-card__desc">We offer you total flexibility. Outside vendors are welcome, and we can also provide a list of local vendors we enjoy working with.</p>
@@ -279,7 +301,7 @@
     <section class="cta-banner" aria-label="Visual Portfolio Banner">
       <h2 class="cta-banner__title">Be part of the experience</h2>
       <p class="cta-banner__text">Browse our collection of beautiful ceremonies and receptions hosted at Mirewood.</p>
-      <a href="gallery.html" class="btn btn--primary">View Our Portfolio</a>
+      <a href="/gallery" class="btn btn--primary">View Our Portfolio</a>
     </section>
 
     <!-- Contact Form Section ("Let's Chat") -->
@@ -372,19 +394,25 @@
       <div class="footer__logo-text">Mirewood</div>
       
       <ul class="footer__nav" aria-label="Footer Navigation">
-        <li><a href="index.html" class="footer__nav-link">Home</a></li>
-        <li><a href="index.html#about" class="footer__nav-link">About Us</a></li>
-        <li><a href="events-services.html" class="footer__nav-link">Events & Services</a></li>
-        <li><a href="gallery.html" class="footer__nav-link">Gallery</a></li>
-        <li><a href="index.html#contact" class="footer__nav-link">Contact</a></li>
+        <li><a href="/" class="footer__nav-link">Home</a></li>
+        <li><a href="/#about" class="footer__nav-link">About Us</a></li>
+        <li><a href="/events-services" class="footer__nav-link">Events & Services</a></li>
+        <li><a href="/gallery" class="footer__nav-link">Gallery</a></li>
+        <li><a href="/#contact" class="footer__nav-link">Contact</a></li>
       </ul>
 
       <div class="footer__copyright">
         <span>2026 © Mirewood Events. Operating Hours: By Appointment Only.</span>
-        <span class="footer__credit">Website by <a href="#" target="_blank" rel="noopener">Antigravity</a></span>
+        <span class="footer__credit">Website by <a href="https://daystardigital.co" target="_blank" rel="noopener">Daystar Digital</a></span>
       </div>
     </div>
   </footer>
+
+  <!-- Mobile Sticky Call/Book Bar -->
+  <div class="mobile-cta-bar" aria-label="Quick contact actions">
+    <a href="tel:6155192951" class="mobile-cta-bar__btn mobile-cta-bar__btn--call">Call Now</a>
+    <a href="#contact" class="mobile-cta-bar__btn mobile-cta-bar__btn--primary">Book a Tour</a>
+  </div>
 
   <script src="script.js"></script>
 </body>

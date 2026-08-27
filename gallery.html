@@ -6,6 +6,21 @@
   <meta name="description" content="View the photo gallery of Mirewood. Browse beautiful rustic weddings, receptions, and scenic pasture details in Springfield, Tennessee.">
   <title>Gallery | Mirewood Event Venue</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Season is set in season-config.js (edit that file to change it for all visitors) -->
+  <script src="season-config.js"></script>
+  <script>
+    (function () {
+      var season = window.MIREWOOD_SEASON;
+      if (!season) {
+        var month = new Date().getMonth() + 1;
+        season = (month >= 3 && month <= 5) ? 'spring'
+          : (month >= 6 && month <= 8) ? 'summer'
+          : (month >= 9 && month <= 11) ? 'fall'
+          : 'winter';
+      }
+      document.documentElement.setAttribute('data-season', season);
+    })();
+  </script>
 </head>
 <body>
 
@@ -15,7 +30,7 @@
   <!-- Header & Navigation -->
   <nav class="navbar" aria-label="Main Navigation">
     <div class="navbar__container">
-      <a href="index.html" class="navbar__logo" aria-label="Mirewood Homepage">
+      <a href="/" class="navbar__logo" aria-label="Mirewood Homepage">
         <svg class="navbar__logo-img" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="50" cy="50" r="45" stroke="#8C765C" stroke-width="2"/>
           <path d="M30 70V30L50 50L70 30V70" stroke="#8C765C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -30,11 +45,12 @@
       </button>
 
       <ul class="navbar__menu" id="nav-menu">
-        <li><a href="index.html" class="navbar__link">Home</a></li>
-        <li><a href="index.html#about" class="navbar__link">About Us</a></li>
-        <li><a href="events-services.html" class="navbar__link">Events & Services</a></li>
-        <li><a href="gallery.html" class="navbar__link navbar__link--active">Gallery</a></li>
-        <li><a href="index.html#contact" class="navbar__link">Contact Us</a></li>
+        <li><a href="/" class="navbar__link">Home</a></li>
+        <li><a href="/#about" class="navbar__link">About Us</a></li>
+        <li><a href="/events-services" class="navbar__link">Events & Services</a></li>
+        <li><a href="/gallery" class="navbar__link navbar__link--active">Gallery</a></li>
+        <li><a href="/#contact" class="navbar__link">Contact Us</a></li>
+        <li><a href="/#contact" class="navbar__cta">Book a Tour</a></li>
       </ul>
     </div>
   </nav>
@@ -45,7 +61,7 @@
     <!-- Subpage Hero -->
     <header class="hero subpage-hero" style="height: 40vh; min-height: 300px;">
       <div class="hero__bg">
-        <img src="assets/495372096_1360663269396564_6284206079498753292_n.avif" alt="Bride and groom standing in a scenic meadow at Mirewood" class="hero__bg-img">
+        <img src="assets/mirewood_fall.jpg" alt="Mirewood venue in fall, trail lined with turning autumn leaves" class="hero__bg-img" data-seasonal-hero>
         <div class="hero__bg-overlay"></div>
       </div>
       <div class="hero__content">
@@ -84,6 +100,42 @@
           <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of reception barn interior in lightbox">
             <img src="assets/reception_hall.jpg" alt="Beautiful indoor reception setup showing wooden beams and table decorations">
           </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of spring greenery at the venue in lightbox">
+            <img src="assets/mirewood_spring.jpg" alt="Bride and groom kissing in the lush green forest at Mirewood in spring">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of summer ceremony field in lightbox">
+            <img src="assets/mirewood_summer.jpg" alt="Outdoor ceremony seating set up in the open field at Mirewood in summer">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of fall trail at the venue in lightbox">
+            <img src="assets/mirewood_fall.jpg" alt="Trail lined with turning autumn leaves at Mirewood in fall">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of winter forest trail in lightbox">
+            <img src="assets/mirewood_winter.jpg" alt="Snow-covered forest trail at Mirewood in winter">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of couple kissing in front of the barn entrance in lightbox">
+            <img src="assets/gallery1.jpg" alt="Bride and groom kissing beneath the entrance chandelier of the Mirewood barn">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of couple kissing in the open pasture with the black barn in lightbox">
+            <img src="assets/gallery2.jpg" alt="Bride and groom kissing in the open pasture with the black barn and evening sky behind them">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of outdoor ceremony vow exchange in lightbox">
+            <img src="assets/gallery3.jpg" alt="Bride and groom exchanging vows under a floral arch at their outdoor ceremony">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of guests lifting the newlyweds during the reception in lightbox">
+            <img src="assets/gallery5.jpg" alt="Newlyweds celebrating on the dance floor as guests cheer inside the reception hall">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of couple portrait at sunset in the field in lightbox">
+            <img src="assets/gallery6.jpg" alt="Bride and groom smiling at each other in the open field at sunset">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of ring bearers walking down the aisle in lightbox">
+            <img src="assets/gallery7.jpg" alt="Two ring bearers walking down the aisle in front of guests seated for the ceremony">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of DJ booth setup inside the reception hall in lightbox">
+            <img src="assets/gallery8.jpg" alt="DJ booth set up inside the Mirewood reception hall during a reception">
+          </div>
+          <div class="gallery-grid__item" tabindex="0" role="button" aria-label="Open image of guests cheering the couple with glow sticks in lightbox">
+            <img src="assets/gallery9.jpg" alt="Guests lining the covered walkway cheering the newlyweds with glow sticks and bubbles">
+          </div>
         </div>
       </div>
     </section>
@@ -108,19 +160,25 @@
       <div class="footer__logo-text">Mirewood</div>
       
       <ul class="footer__nav" aria-label="Footer Navigation">
-        <li><a href="index.html" class="footer__nav-link">Home</a></li>
-        <li><a href="index.html#about" class="footer__nav-link">About Us</a></li>
-        <li><a href="events-services.html" class="footer__nav-link">Events & Services</a></li>
-        <li><a href="gallery.html" class="footer__nav-link">Gallery</a></li>
-        <li><a href="index.html#contact" class="footer__nav-link">Contact</a></li>
+        <li><a href="/" class="footer__nav-link">Home</a></li>
+        <li><a href="/#about" class="footer__nav-link">About Us</a></li>
+        <li><a href="/events-services" class="footer__nav-link">Events & Services</a></li>
+        <li><a href="/gallery" class="footer__nav-link">Gallery</a></li>
+        <li><a href="/#contact" class="footer__nav-link">Contact</a></li>
       </ul>
 
       <div class="footer__copyright">
         <span>2026 © Mirewood Events. Operating Hours: By Appointment Only.</span>
-        <span class="footer__credit">Website by <a href="#" target="_blank" rel="noopener">Antigravity</a></span>
+        <span class="footer__credit">Website by <a href="https://daystardigital.co" target="_blank" rel="noopener">Daystar Digital</a></span>
       </div>
     </div>
   </footer>
+
+  <!-- Mobile Sticky Call/Book Bar -->
+  <div class="mobile-cta-bar" aria-label="Quick contact actions">
+    <a href="tel:6155192951" class="mobile-cta-bar__btn mobile-cta-bar__btn--call">Call Now</a>
+    <a href="/#contact" class="mobile-cta-bar__btn mobile-cta-bar__btn--primary">Book a Tour</a>
+  </div>
 
   <script src="script.js"></script>
 </body>

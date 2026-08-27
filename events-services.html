@@ -6,6 +6,21 @@
   <meta name="description" content="Discover event services at Mirewood. Learn about our two-day wedding rentals, social gathering packages, corporate dinners, amenities, and pricing details.">
   <title>Events & Services | Mirewood Venue</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Season is set in season-config.js (edit that file to change it for all visitors) -->
+  <script src="season-config.js"></script>
+  <script>
+    (function () {
+      var season = window.MIREWOOD_SEASON;
+      if (!season) {
+        var month = new Date().getMonth() + 1;
+        season = (month >= 3 && month <= 5) ? 'spring'
+          : (month >= 6 && month <= 8) ? 'summer'
+          : (month >= 9 && month <= 11) ? 'fall'
+          : 'winter';
+      }
+      document.documentElement.setAttribute('data-season', season);
+    })();
+  </script>
 </head>
 <body>
 
@@ -15,7 +30,7 @@
   <!-- Header & Navigation -->
   <nav class="navbar" aria-label="Main Navigation">
     <div class="navbar__container">
-      <a href="index.html" class="navbar__logo" aria-label="Mirewood Homepage">
+      <a href="/" class="navbar__logo" aria-label="Mirewood Homepage">
         <svg class="navbar__logo-img" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="50" cy="50" r="45" stroke="#8C765C" stroke-width="2"/>
           <path d="M30 70V30L50 50L70 30V70" stroke="#8C765C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -30,11 +45,12 @@
       </button>
 
       <ul class="navbar__menu" id="nav-menu">
-        <li><a href="index.html" class="navbar__link">Home</a></li>
-        <li><a href="index.html#about" class="navbar__link">About Us</a></li>
-        <li><a href="events-services.html" class="navbar__link navbar__link--active">Events & Services</a></li>
-        <li><a href="gallery.html" class="navbar__link">Gallery</a></li>
-        <li><a href="index.html#contact" class="navbar__link">Contact Us</a></li>
+        <li><a href="/" class="navbar__link">Home</a></li>
+        <li><a href="/#about" class="navbar__link">About Us</a></li>
+        <li><a href="/events-services" class="navbar__link navbar__link--active">Events & Services</a></li>
+        <li><a href="/gallery" class="navbar__link">Gallery</a></li>
+        <li><a href="/#contact" class="navbar__link">Contact Us</a></li>
+        <li><a href="/#contact" class="navbar__cta">Book a Tour</a></li>
       </ul>
     </div>
   </nav>
@@ -45,7 +61,7 @@
     <!-- Subpage Hero -->
     <header class="hero subpage-hero" style="height: 40vh; min-height: 300px;">
       <div class="hero__bg">
-        <img src="assets/reception_hall.jpg" alt="Interior view of Mirewood reception hall" class="hero__bg-img">
+        <img src="assets/mirewood_fall.jpg" alt="Mirewood venue in fall, trail lined with turning autumn leaves" class="hero__bg-img" data-seasonal-hero>
         <div class="hero__bg-overlay"></div>
       </div>
       <div class="hero__content">
@@ -96,7 +112,7 @@
                   <strong>BYO-Alcohol:</strong> Bring your own alcohol permitted with no forced venue bar packages.
                 </li>
               </ul>
-              <a href="index.html#contact" class="btn btn--primary">Inquire About Dates</a>
+              <a href="/#contact" class="btn btn--primary">Inquire About Dates</a>
             </div>
             <div class="service-row__img-wrapper">
               <img src="assets/hero_sunset.jpg" alt="Romantic couple portrait at Mirewood" class="service-row__img">
@@ -106,7 +122,7 @@
           <!-- Social Events Row -->
           <div class="service-row">
             <div class="service-row__img-wrapper">
-              <img src="assets/495181087_1360663536063204_5677267497084174376_n.avif" alt="Outdoor celebration at golden hour" class="service-row__img">
+              <img src="assets/reception_hall.jpg" alt="Reception hall set up with tables and chairs for a social gathering" class="service-row__img">
             </div>
             <div class="service-row__content">
               <span class="section__subtitle" style="color: var(--color-primary-light); text-align: left;">Life's Milestones</span>
@@ -128,7 +144,7 @@
                   Flexibility to set up indoor seating tables or host in the outdoor pasture.
                 </li>
               </ul>
-              <a href="index.html#contact" class="btn btn--secondary">Plan Your Party</a>
+              <a href="/#contact" class="btn btn--secondary">Plan Your Party</a>
             </div>
           </div>
 
@@ -154,10 +170,10 @@
                   Prep kitchen makes corporate lunch or dinner catering a simple setup.
                 </li>
               </ul>
-              <a href="index.html#contact" class="btn btn--primary">Request Corporate Info</a>
+              <a href="/#contact" class="btn btn--primary">Request Corporate Info</a>
             </div>
             <div class="service-row__img-wrapper">
-              <img src="assets/495372096_1360663269396564_6284206079498753292_n.avif" alt="Corporate banquet table in country setting" class="service-row__img">
+              <img src="assets/banquet_hall.jpg" alt="Banquet hall set up with long tables and chandeliers for a corporate or gala event" class="service-row__img">
             </div>
           </div>
 
@@ -177,19 +193,25 @@
       <div class="footer__logo-text">Mirewood</div>
       
       <ul class="footer__nav" aria-label="Footer Navigation">
-        <li><a href="index.html" class="footer__nav-link">Home</a></li>
-        <li><a href="index.html#about" class="footer__nav-link">About Us</a></li>
-        <li><a href="events-services.html" class="footer__nav-link">Events & Services</a></li>
-        <li><a href="gallery.html" class="footer__nav-link">Gallery</a></li>
-        <li><a href="index.html#contact" class="footer__nav-link">Contact</a></li>
+        <li><a href="/" class="footer__nav-link">Home</a></li>
+        <li><a href="/#about" class="footer__nav-link">About Us</a></li>
+        <li><a href="/events-services" class="footer__nav-link">Events & Services</a></li>
+        <li><a href="/gallery" class="footer__nav-link">Gallery</a></li>
+        <li><a href="/#contact" class="footer__nav-link">Contact</a></li>
       </ul>
 
       <div class="footer__copyright">
         <span>2026 © Mirewood Events. Operating Hours: By Appointment Only.</span>
-        <span class="footer__credit">Website by <a href="#" target="_blank" rel="noopener">Antigravity</a></span>
+        <span class="footer__credit">Website by <a href="https://daystardigital.co" target="_blank" rel="noopener">Daystar Digital</a></span>
       </div>
     </div>
   </footer>
+
+  <!-- Mobile Sticky Call/Book Bar -->
+  <div class="mobile-cta-bar" aria-label="Quick contact actions">
+    <a href="tel:6155192951" class="mobile-cta-bar__btn mobile-cta-bar__btn--call">Call Now</a>
+    <a href="/#contact" class="mobile-cta-bar__btn mobile-cta-bar__btn--primary">Book a Tour</a>
+  </div>
 
   <script src="script.js"></script>
 </body>

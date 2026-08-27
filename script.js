@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Seasonal Theme System (season itself is set in season-config.js)
+  const seasonHeroImages = {
+    spring: { src: 'assets/mirewood_spring.jpg', alt: 'Mirewood venue in spring, lush green forest surrounding the grounds' },
+    summer: { src: 'assets/mirewood_summer.jpg', alt: 'Mirewood venue in summer, open field ceremony setup under a clear blue sky' },
+    fall: { src: 'assets/mirewood_fall.jpg', alt: 'Mirewood venue in fall, trail lined with turning autumn leaves' },
+    winter: { src: 'assets/mirewood_winter.jpg', alt: 'Mirewood venue in winter, snow-covered forest trail' }
+  };
+
+  const currentSeason = document.documentElement.getAttribute('data-season') || 'fall';
+  document.querySelectorAll('[data-seasonal-hero]').forEach((img) => {
+    img.src = seasonHeroImages[currentSeason].src;
+    img.alt = seasonHeroImages[currentSeason].alt;
+  });
+
   // 1. Mobile Menu Toggle
   const toggleBtn = document.querySelector('.navbar__toggle');
   const navMenu = document.querySelector('.navbar__menu');

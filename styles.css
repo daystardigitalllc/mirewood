@@ -14,6 +14,7 @@
   --color-accent: #3E4E42;       /* Sage Green */
   --color-accent-light: #526657;
   --color-white: #FFFFFF;
+  --overlay-rgb: 45, 30, 20;      /* Default (fall) hero overlay tint */
 
   /* Typography */
   --font-serif: 'Cormorant Garamond', serif;
@@ -25,6 +26,74 @@
   --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.03);
   --shadow-medium: 0 10px 40px rgba(0, 0, 0, 0.06);
   --border-radius: 8px;
+}
+
+/* ==========================================================================
+   Seasonal Themes
+   The <html> element gets a data-season attribute (set inline in <head>
+   before first paint, and updatable live via the season switcher widget).
+   Each block reskins the same variable set used throughout the site, so no
+   other CSS needs to change when the season changes.
+   ========================================================================== */
+
+/* Spring — dusty rose & fresh sage, matches the lush green ceremony photos */
+[data-season="spring"] {
+  --color-primary: #A98470;
+  --color-primary-light: #C29E89;
+  --color-primary-dark: #82604F;
+  --color-bg-light: #FBF7F1;
+  --color-bg-dark: #263326;
+  --color-bg-darker: #1B241B;
+  --color-text-dark: #24291F;
+  --color-text-muted: #5F6B58;
+  --color-accent: #6E8F5C;
+  --color-accent-light: #8AAE76;
+  --overlay-rgb: 26, 33, 24;
+}
+
+/* Summer — sunflower gold & sky blue, matches the bright open-field photo */
+[data-season="summer"] {
+  --color-primary: #C9A227;
+  --color-primary-light: #DDBB55;
+  --color-primary-dark: #9E7E1C;
+  --color-bg-light: #FFFCF3;
+  --color-bg-dark: #24302E;
+  --color-bg-darker: #19221F;
+  --color-text-dark: #262622;
+  --color-text-muted: #6B6A54;
+  --color-accent: #3E7CA6;
+  --color-accent-light: #5D97BE;
+  --overlay-rgb: 30, 38, 36;
+}
+
+/* Fall — burnt rust & deep burgundy, matches the turning-leaves trail photo */
+[data-season="fall"] {
+  --color-primary: #B5652D;
+  --color-primary-light: #CB7F49;
+  --color-primary-dark: #8A4A1E;
+  --color-bg-light: #FBF3EA;
+  --color-bg-dark: #2E211B;
+  --color-bg-darker: #221812;
+  --color-text-dark: #2A2019;
+  --color-text-muted: #6E5A4C;
+  --color-accent: #7A3B2E;
+  --color-accent-light: #945343;
+  --overlay-rgb: 45, 30, 20;
+}
+
+/* Winter — slate blue-grey & deep navy, matches the snow-covered trail photo */
+[data-season="winter"] {
+  --color-primary: #7C8B99;
+  --color-primary-light: #9DAAB5;
+  --color-primary-dark: #5C6B78;
+  --color-bg-light: #F7F9FA;
+  --color-bg-dark: #1E2730;
+  --color-bg-darker: #141B22;
+  --color-text-dark: #1F262B;
+  --color-text-muted: #5C6870;
+  --color-accent: #2F4858;
+  --color-accent-light: #4C6B7D;
+  --overlay-rgb: 24, 32, 38;
 }
 
 /* Base resets */
@@ -225,9 +294,10 @@ p {
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(34, 37, 35, 0.4) 0%,
-    rgba(34, 37, 35, 0.65) 100%
+    rgba(var(--overlay-rgb), 0.4) 0%,
+    rgba(var(--overlay-rgb), 0.65) 100%
   );
+  transition: background 0.6s ease;
   z-index: 2;
 }
 
@@ -241,6 +311,32 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   animation: fade-in-up 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+/* Homepage hero — editorial treatment: type sits directly on the photograph,
+   left-aligned and anchored low, instead of a centered frosted card */
+.hero--editorial {
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: left;
+  padding: 0 6vw 8vh;
+}
+
+.hero--editorial .hero__content {
+  max-width: 620px;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
+  border: none;
+  border-radius: 0;
+}
+
+.hero--editorial .hero__text {
+  margin: 0 0 2rem 0;
+}
+
+.hero--editorial .hero__actions {
+  text-align: left;
 }
 
 .hero__subtitle {
@@ -485,14 +581,18 @@ p {
   font-family: var(--font-serif);
   font-size: 1.2rem;
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  align-items: baseline;
+  gap: 0.85rem;
   color: rgba(255, 255, 255, 0.9);
 }
 
-.services__item svg {
-  fill: var(--color-primary-light);
+.services__item::before {
+  content: '';
+  width: 14px;
+  height: 1px;
+  background-color: var(--color-primary-light);
   flex-shrink: 0;
+  transform: translateY(-0.35em);
 }
 
 /* About Us Section styling */
@@ -562,7 +662,7 @@ p {
 }
 
 .feature-card__icon svg {
-  fill: var(--color-primary);
+  color: var(--color-primary);
   display: block;
 }
 
@@ -1144,3 +1244,90 @@ textarea.form-input {
     text-align: center;
   }
 }
+
+/* Hero Trust Line — a thin rule and small caps note, not a badge chip;
+   sits just above the CTAs it's meant to support */
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1.75rem;
+}
+
+.hero__eyebrow-mark {
+  width: 30px;
+  height: 1px;
+  background-color: var(--color-primary-light);
+  flex-shrink: 0;
+}
+
+/* Navbar "Book a Tour" CTA — visually distinct from text links so the
+   highest-intent action stays visible while scrolling */
+.navbar__cta {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.55rem 1.4rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.navbar__cta:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(140, 118, 92, 0.3);
+}
+
+/* Mobile Sticky Call / Book Bar */
+.mobile-cta-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 58px;
+  }
+
+  .mobile-cta-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 997;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .mobile-cta-bar__btn {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+  }
+
+  .mobile-cta-bar__btn--call {
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+  }
+
+  .mobile-cta-bar__btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+}
+
