@@ -845,7 +845,7 @@ textarea.form-input {
 
 /* Call to Action Section (Generic Footer CTA) */
 .cta-banner {
-  background: linear-gradient(rgba(34, 37, 35, 0.8), rgba(34, 37, 35, 0.8)), url('assets/reception_hall.jpg');
+  background: linear-gradient(rgba(34, 37, 35, 0.8), rgba(34, 37, 35, 0.8)), url('assets/reception_hall_new.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
