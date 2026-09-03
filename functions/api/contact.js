@@ -65,7 +65,7 @@ export async function onRequestPost({ request, env }) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'Mirewood Events Website <onboarding@resend.dev>',
+      from: 'Mirewood Events Website <inquiries@themirewood.com>',
       to: [NOTIFY_EMAIL],
       reply_to: email,
       subject,
@@ -76,7 +76,7 @@ export async function onRequestPost({ request, env }) {
   if (!resendResponse.ok) {
     const errBody = await resendResponse.text();
     console.error('Resend error:', errBody);
-    return Response.json({ error: 'Failed to send email.', debug: errBody }, { status: 502 });
+    return Response.json({ error: 'Failed to send email.' }, { status: 502 });
   }
 
   return Response.json({ ok: true });
