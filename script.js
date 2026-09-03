@@ -77,28 +77,48 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. Contact Form Interaction
   const contactForm = document.querySelector('.chat__form');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
+
       const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const errorEl = contactForm.querySelector('.form-error');
       const originalText = submitBtn.textContent;
-      
-      // Simple visual feedback for submit
+
+      errorEl.style.display = 'none';
       submitBtn.disabled = true;
       submitBtn.textContent = 'SENDING...';
-      
-      setTimeout(() => {
+
+      const formData = new FormData(contactForm);
+      const payload = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(result.error || 'Something went wrong. Please try again.');
+        }
+
         submitBtn.style.backgroundColor = '#526657'; // Success Green
         submitBtn.textContent = 'SENT SUCCESSFULLY!';
-        
-        // Reset form
+
         setTimeout(() => {
           contactForm.reset();
           submitBtn.disabled = false;
           submitBtn.style.backgroundColor = '';
           submitBtn.textContent = originalText;
         }, 3000);
-      }, 1500);
+      } catch (err) {
+        errorEl.textContent = err.message || 'Something went wrong. Please try again.';
+        errorEl.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
     });
   }
 
